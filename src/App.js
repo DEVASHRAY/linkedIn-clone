@@ -1,16 +1,29 @@
 import React from "react";
 import "./index.css";
-import { Header, LeftSideBar } from "./components";
-
+import { Feed, Header, LeftSideBar, LogIn, Widget } from "./components";
+import { useSelector } from "react-redux";
+import { selectUser } from "./redux/reducers/userReducer";
 function App() {
-  return (
-    <div className="app_wrapper">
-      <Header />
+  
+  const user = useSelector(selectUser);
 
-      <div className="app_body">
-        <LeftSideBar />
-      </div>
-    </div>
+  console.log("user", user);
+
+  return (
+    <>
+      {!user ? (
+        <LogIn />
+      ) : (
+        <div className="app_wrapper">
+          <Header />
+          <div className="app_body">
+            <LeftSideBar />
+            <Feed />
+            <Widget />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

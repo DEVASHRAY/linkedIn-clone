@@ -1,6 +1,7 @@
 import React from "react";
 import { useStyles } from "./stylesLeftSidebar";
 import FaceTwoToneIcon from "@mui/icons-material/FaceTwoTone";
+import Avatar from "@mui/material/Avatar";
 
 function SideBar() {
   const classes = useStyles();
@@ -11,7 +12,7 @@ function SideBar() {
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShFu6QavOCPOC3y6skmaG6cpNXM3PBIQum1g&usqp=CAU" />
 
         <div className={classes.profile__details}>
-          <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" />
+          <Avatar className="avator" />
           <h4>Devashray</h4>
           <p>{`React & React-Native Developer`}</p>
         </div>
@@ -28,6 +29,28 @@ function SideBar() {
           </span>
           <span className={classes.profile__number}>20</span>
         </div>
+      </div>
+
+      <div className={classes.sidebar__recent}>
+        <p>Recent</p>
+        <p className="hash">
+          <span># </span>branding
+        </p>
+        <p className="hash">
+          <span># </span>marketing
+        </p>
+        <p className="hash">
+          <span># </span>web development
+        </p>
+        <p className="hash">
+          <span># </span>programming
+        </p>
+        <p className="hash">
+          <span># </span>react js
+        </p>
+        <p className="hash">
+          <span># </span>redux toolkit
+        </p>
       </div>
     </div>
   );
