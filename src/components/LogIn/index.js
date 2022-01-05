@@ -50,6 +50,28 @@ function LogIn() {
     setPhotoURL("");
   };
 
+  const signIn = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      return alert("Enter right Credentials");
+    }
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(({ user }) => {
+        dispatch(
+          loginUser({
+            email: user.email,
+            uid: user.uid,
+            photoURL: user.photoURL,
+            displayName: user.displayName,
+          })
+        );
+      })
+      .catch((err) => alert(err));
+  };
+
   return (
     <div className={classes.login}>
       <img src="https://cuttingedgepr.com/wp-content/uploads/2015/02/LinkedIn-logo.jpg" />
@@ -94,7 +116,7 @@ function LogIn() {
       )}
 
       {!signUp && (
-        <form className={classes.login__form}>
+        <form className={classes.login__form} onSubmit={(e) => signIn(e)}>
           <input
             type="email"
             placeholder="Email"

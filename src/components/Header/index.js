@@ -6,6 +6,8 @@ import MiniCards from "./MiniCards";
 function Header() {
   const classes = useStyles();
 
+ 
+
   return (
     <div className={classes.header}>
       <div className={classes.header__left}>

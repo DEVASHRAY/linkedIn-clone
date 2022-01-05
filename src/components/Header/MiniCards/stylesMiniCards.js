@@ -15,6 +15,20 @@ export const useStyles = makeStyles({
       color: "#000",
     },
 
+    "&:last-child": {
+      "& img": {
+        width: 20,
+        height: 20,
+        borderRadius: 100,
+        overflow: "hidden",
+      },
+
+      "& div": {
+        width: 25,
+        height: 25,
+      },
+    },
+
     "&:first-child::before": {
       content: '"-"',
       position: "absolute",

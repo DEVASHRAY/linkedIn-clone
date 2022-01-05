@@ -15,7 +15,7 @@ export const useStyles = makeStyles({
     borderRadius: 10,
     paddingBottom: 10,
     overflow: "hidden",
-    "& img": {
+    "& .backgroundImg": {
       width: "100%",
       height: 50,
     },

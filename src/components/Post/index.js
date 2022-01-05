@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { useStyles } from "../Post/stylesPost";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Avatar from "@mui/material/Avatar";
@@ -26,10 +26,10 @@ const footerOptions = [
   },
 ];
 
-const Post = ({ name, description, message, photoURL, id }) => {
+const Post = forwardRef(({ name, description, message, photoURL, id }, ref) => {
   const classes = useStyles();
   return (
-    <div className={classes.post}>
+    <div className={classes.post} ref={ref}>
       <div className={classes.post__header}>
         <div className={classes.post__left}>
           <Avatar className="avator" />
@@ -60,6 +60,6 @@ const Post = ({ name, description, message, photoURL, id }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Post;
